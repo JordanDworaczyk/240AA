@@ -12,7 +12,7 @@
  {
    cout << "My name is Jordan Dworaczyk." << endl;
    cout << "I have taken Principles of Programming in Java, Digital Design"<< endl;
-   cout << "Fundamentals, and Object Oriented Programming and Data Structres.\n";
+   cout << "Fundamentals, and Object Oriented Programming and Data Structures.\n";
    cout << "I sometimes use a computer for Excel when I am at work, but besides\n";
    cout << "this I have no professional background with computers.\n";
    cout << "I will most likely use a Lenovo computer with Windows 8.1 or a HP\n";
