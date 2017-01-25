@@ -19,7 +19,7 @@
    const double PI = 3.14159;
 
    cout << "How many spheres would you like to find the total volume for?" << endl;
-   cin >> n;
+   cin  >> n;
 
    for(int i = 0; i < n; i++) {
     cout << "Enter the radius of sphere number " << i + 1 << endl << "(The radius"
@@ -29,9 +29,9 @@
 
     while (radius < 0) {
       /* force user to input a positve number */
-      cout << "Sorry. The number you entered was less then zero. Please enter a" << '\n';
-      cout << "positve number." << endl;
-      cin >> radius;
+      cout << "Sorry. The number you entered was less then zero. Please enter a"
+           << "positve number." << endl;
+      cin  >> radius;
     }
 
     volume = volume + ( (4/3) * PI * (pow(radius, 3) ) );
