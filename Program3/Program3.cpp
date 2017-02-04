@@ -15,20 +15,33 @@ void collectUserInput(double &charge, double &threshold, double &init_balance,
 double validateNonNegative(double user_input);
 int validatePeriod(int user_input);
 void printPeriod(int period);
+void printChoice(int choice);
 int validateChoice(int choice);
+void accountSummary(double init_balance, double rate, double charge,\
+    double threshold,
+    int period,
+    int choice);
 double getFinalAccountBalance(double init_balance, double rate, double charge,
-  double threshold, int table);
+    double threshold);
 int getLengthToReachGoal(double init_balance, double rate, double charge,
     double threshold,
-    int table, int period,
+    int period,
     double &final_balance);
 
 
 int main() {
+
   double init_balance, rate, charge, threshold;
-  int table, period, choice;
-  breifIntroForUser();
+  int period, choice;    breifIntroForUser();
   collectUserInput(charge, threshold, init_balance, rate, period, choice);
+  accountSummary(init_balance, rate, charge, threshold, period, choice);
+
+  if(choice == 0){
+    getFinalAccountBalance(init_balance, rate, charge, threshold);
+  } else {
+    getLengthToReachGoal(init_balance, rate, charge, threshold, period,
+        final balance);
+  }
   return 0;
  }
 
@@ -128,6 +141,17 @@ void printPeriod(int period) {
   }
 }
 
+void printChoice(int choice) {
+  int choiceA = 0;
+  int choiceB = 1;
+
+  if (choiceA == 0) {
+    cout << "A" << endl;
+  } else {
+    cout << "B" << endl;
+  }
+}
+
 int validateChoice(int choice) {
   while(choice < 0 || choice > 1) {
     cout << "Sorry you must enter number 0 or 1." << endl;
@@ -135,4 +159,33 @@ int validateChoice(int choice) {
     cin  >> choice;
   }
   return choice;
+}
+
+void accountSummary(double init_balance, double rate, double charge,\
+    double threshold, int period, int choice) {
+  cout << endl;
+  cout << "Account summary:" << endl;
+  cout << "Annual Processing Charge: $" << charge << endl;
+  cout << "Threshhold: $" << threshold << endl;
+  cout << "Initial Account Balance: $" << init_balance << endl;
+  cout << "Interest Rate: " << rate << "%" << endl;
+  cout << "Period Compounded Over: ";
+  printPeriod(period);
+  cout << endl << "Choice: ";
+  printChoice(choice);
+  cout << endl;
+}
+
+double getFinalAccountBalance(double init_balance, double rate, double charge,
+    double threshold) {
+
+  return 0;
+}
+
+int getLengthToReachGoal(double init_balance, double rate, double charge,
+    double threshold,
+    int period,
+    double &final_balance){
+
+  return 0;
 }
