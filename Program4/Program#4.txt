@@ -86,7 +86,7 @@
 )
 
 (define (findHourlyPay hours_commission hourly_rate )
-  (if (>= hours_commission 40 )
+  (if (> hours_commission 40 )
     (* hourly_rate 1.5 hours_commission)
     (* hourly_rate hours_commission)
   )
