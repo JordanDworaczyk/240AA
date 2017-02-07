@@ -78,24 +78,24 @@
 ; (or zero for commissioned employees), and the amount donated to the boss'
 ; birthday gift fund (zero if no gift). ]
 
-(define (weeklyPaycheck is_hourly pay hourly_rate bday_gift)
+(define (weeklyPaycheck is_hourly hours_commission hourly_rate bday_gift)
   (if is_hourly
-    ( - (findHourlyPay pay hourly_rate ) bday_gift )
-    ( - (findCommission pay ) bday_gift )
+    ( - (findHourlyPay hours_commission hourly_rate ) bday_gift )
+    ( - (findCommission hours_commission ) bday_gift )
   )
 )
 
-(define (findHourlyPay pay hourly_rate )
-  (if (< pay 40 )
-    (* hourly_rate 1.5 pay)
-    (* hourly_rate pay)
+(define (findHourlyPay hours_commission hourly_rate )
+  (if (>= hours_commission 40 )
+    (* hourly_rate 1.5 hours_commission)
+    (* hourly_rate hours_commission)
   )
 )
 
-(define ( findCommission pay )
+(define ( findCommission hours_commission )
   (cond
-    ( (< pay 1000) (* pay .01) )
-    ( (< pay 10000) (* pay .025) )
-    (#t (* pay .06) ) 
+    ( (< hours_commission 1000) (* hours_commission .01) )
+    ( (< hours_commission 10000) (* hours_commission .025) )
+    (#t (* hours_commission .06) )
   )
 )
