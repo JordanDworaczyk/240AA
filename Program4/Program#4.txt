@@ -79,9 +79,23 @@
 ; birthday gift fund (zero if no gift). ]
 
 (define (weeklyPaycheck is_hourly pay hourly_rate bday_gift)
-      
+  (if is_hourly
+    ( - (findHourlyPay pay hourly_rate ) bday_gift )
+    ( - (findCommission pay ) bday_gift )
+  )
 )
 
-( define ( employeedHourly is_hourly )
-  if( is_hourly )
+(define (findHourlyPay pay hourly_rate )
+  (if (< pay 40 )
+    (* hourly_rate 1.5 pay)
+    (* hourly_rate pay)
+  )
+)
+
+(define ( findCommission pay )
+  (cond
+    ( (< pay 1000) (* pay .01) )
+    ( (< pay 10000) (* pay .025) )
+    (#t (* pay .06) ) 
+  )
 )
