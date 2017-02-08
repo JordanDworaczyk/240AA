@@ -81,7 +81,7 @@
 (define (weeklyPaycheck is_hourly hours_commission hourly_rate bday_gift)
   (if is_hourly
     ( - (findHourlyPay hours_commission hourly_rate ) bday_gift )
-    ( - (findCommission hours_commission ) bday_gift )
+    ( - (* (findCommissionRate hours_commission ) hours_commission ) bday_gift )
   )
 )
 
@@ -93,10 +93,10 @@
   )
 )
 
-(define ( findCommission hours_commission )
+(define ( findCommissionRate hours_commission )
   (cond
-    ( (< hours_commission 1000) (* hours_commission .01) )
-    ( (< hours_commission 10000) (* hours_commission .025) )
-    (#t (* hours_commission .06) )
+    ( (< hours_commission 1000)  .01 )
+    ( (< hours_commission 10000) .025 )
+    (#t .06 )
   )
 )
