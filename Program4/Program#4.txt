@@ -1,0 +1,102 @@
+; Jordan Dworaczyk
+; CSC240AA -- Program#4 - Scheme
+; Due Wednesday, February 8
+; Writing Scheme Functions with decisions (using 'if' and 'cond')
+
+; (1)
+; Compute the weight of water in a pipe with the following formula:
+; w = PI * (D/24) * L * K
+; where
+;     w = water weight (pounds)
+;     D = pipe diameter (inches)
+;     L = pipe length (feet)
+;     K = water density (pounds per cubic foot; either 62.4 for pure water,
+;         or 64.08 for sea water)
+;     PI = pi (3.14159)
+; Inputs: pipe diameter, pipe length, and a boolean flag for pure water/not
+;         pure water(sea water).
+
+
+
+( define (weightOfWater pipe_diameter pipe_length is_pure)
+  ( *
+   pi ( / pipe_diameter  24 ) pipe_length (findIsPure is_pure)
+  )
+)
+
+( define (findIsPure is_pure)
+  (if is_pure
+    62.4
+    64.08
+  )
+)
+
+(weightOfWater 1 1 #t )
+(weightOfWater 1 1 #f )
+
+; (2)
+; Given a frequency in MHz, return a string with the abbreviation for the
+; frequency band.
+
+( define ( frequencyBand frequency_given )
+  ( cond
+    ( ( <=  (frequencyInKHz frequency_given )  30   ) "VLF")
+    ( ( <=  (frequencyInKHz frequency_given )  300  ) "LF")
+    ( ( <=  frequency_given   3 ) "MF")
+    ( ( <=  frequency_given  30 ) "HF")
+    ( ( <=  frequency_given  328.6 ) "VHF")
+    (#t "UHF")
+  )
+)
+
+( define (frequencyInKHz frequency_given)
+  ( *  frequency_given 1000  )
+)
+
+(frequencyBand .003)
+(frequencyBand .3)
+(frequencyBand 3)
+(frequencyBand 30)
+(frequencyBand 328.6)
+(frequencyBand 2009)
+
+; (3)
+; Compute the total weekly paycheck of an employee at Knaechelkopf's department
+; store.
+;   (a) Employees are either hourly or paid by commission
+;   (b) Hourly employees get their hourly rate times the number of hours,
+;   plus time and a half for overtime (more than 40 hours)
+;   (c) Commissioned employees get a percentage of their sales, as follows:
+;   sales                   rate
+;   s < $1000               1%
+;   $1000 <= s < $10,000    2.5%
+;   s >= $10,000            6%
+;   (d) Every employee has the option to contribute to the boss's birthday fund,
+;   and the amount of the donation is subtracted from the weekly pay.
+; [Inputs: a boolean that indicates employee type (hourly/not hourly), a number
+; that indicates either hours or sales, a number that indicates the hourly rate
+; (or zero for commissioned employees), and the amount donated to the boss'
+; birthday gift fund (zero if no gift). ]
+
+(define (weeklyPaycheck is_hourly hours_commission hourly_rate bday_gift)
+  (if is_hourly
+    ( - (findHourlyPay hours_commission hourly_rate ) bday_gift )
+    ( - (* (findCommissionRate hours_commission ) hours_commission ) bday_gift )
+  )
+)
+
+(define (findHourlyPay hours_commission hourly_rate )
+  (if (> hours_commission 40 )
+    (+ (* hourly_rate (- hours_commission (- hours_commission 40 ) ) )
+      (* (- hours_commission 40 ) hourly_rate 1.5 ) )
+    (* hourly_rate hours_commission)
+  )
+)
+
+(define ( findCommissionRate hours_commission )
+  (cond
+    ( (< hours_commission 1000)  .01 )
+    ( (< hours_commission 10000) .025 )
+    (#t .06 )
+  )
+)
