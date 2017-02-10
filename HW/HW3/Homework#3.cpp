@@ -15,18 +15,18 @@ int displayArray(int user_array[], int array_size);
 
 int main() {
   int *user_array;
-  int *list_given;
+  int *list_of_matches;
   int list_size, total_matches, target;
 
   user_array = collectUserArray(list_size);
   displayArray(user_array, list_size);
 
-  list_size = 5;
-  target = 1;
-  list_given = new int[list_size];
-  list_given = findMatchingIntegers(list_given, list_size, target
+  cout << "\nWhat intger would you like to search for?\nEnter Integer: ";
+  cin  >> target;
+  cout << endl;
+  list_of_matches = findMatchingIntegers(user_array, list_size, target
       ,total_matches);
-
+  displayArray(list_of_matches, total_matches);
   return 0;
 }
 
@@ -52,7 +52,7 @@ int *collectUserArray(int &array_length) {
       list_integers[i] = user_input;
     }
   } else {
-    cout << "Array size of zero. Thats all folks!\n";
+    cout << "Array size of zero.\n";
     return 0;
   }
   cout << endl;
@@ -76,11 +76,30 @@ int *findMatchingIntegers(int list_given[], int list_size,  int target
     ,int &total_matches) {
 
   int *matches;
-  matches = new int[list_size];
+  total_matches = 0;
 
   for(int i = 0; i < list_size; i++ ) {
+    int test = list_given[i];
+    if(test == target) {
+      total_matches++;
+    }
+  }
 
+  matches = new int[total_matches];
+  total_matches = 0;
+
+  for(int i = 0; i < list_size; i++) {
+    int test = list_given[i];
+    if(test == target) {
+      matches[total_matches] = i;
+      total_matches++;
+    }
+  }
+
+  if(total_matches != 0) {
+    return matches;
   }
 
   return 0;
+
 }
