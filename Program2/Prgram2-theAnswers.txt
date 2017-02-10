@@ -21,7 +21,9 @@
 ;(Problem 3)
 ; Peter Parker decides to buy a 1965 Mustang for $12000, so he takes out a
 ; 3-year loan at 12% annual interest compounded monthly. How much is his monthly
-; payment? (/ ( * 12000 0.01 ) (- 1 (expt (+ 1 0.01 ) (- 36) ) ) )
+; payment?
+
+(/ ( * 12000 0.01 ) (- 1 (expt (+ 1 0.01 ) (- 36) ) ) )
 
 ;(Problem 4)
 ; At the beginning of every month, Clark Kent deposits $200 from his paycheck
