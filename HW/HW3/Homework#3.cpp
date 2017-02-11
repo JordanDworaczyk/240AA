@@ -34,8 +34,8 @@ int main() {
             ,total_matches);
         displayArray(list_of_matches, total_matches);
         cout << endl;
-        cout << "Would you like to continue looking for matches?\nEnter 1 for yes"
-             << " enter 0 for no: ";
+        cout << "Would you like to continue looking for matches?\nEnter 1 for "
+             << " yes enter 0 for no: ";
         cin  >> user_choice;
     }
     cout << endl;
