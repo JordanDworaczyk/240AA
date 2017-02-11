@@ -29,14 +29,13 @@ int main() {
       cin  >> target;
       cout << endl;
 
-
-        list_of_matches = findMatchingIntegers(user_array, list_size, target
-            ,total_matches);
-        displayArray(list_of_matches, total_matches);
-        cout << endl;
-        cout << "Would you like to continue looking for matches?\nEnter 1 for "
-             << " yes enter 0 for no: ";
-        cin  >> user_choice;
+      list_of_matches = findMatchingIntegers(user_array, list_size, target
+          ,total_matches);
+      displayArray(list_of_matches, total_matches);
+      cout << endl;
+      cout << "Would you like to continue looking for matches?\nEnter 1 for "
+           << " yes enter 0 for no: ";
+      cin  >> user_choice;
     }
     cout << endl;
     cout << "Would you like to do it again for another list?\nEnter 1 for yes"
@@ -119,5 +118,4 @@ int *findMatchingIntegers(int list_given[], int list_size,  int target
   }
 
   return 0;
-
 }
