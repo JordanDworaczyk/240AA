@@ -16,17 +16,35 @@ int displayArray(int user_array[], int array_size);
 int main() {
   int *user_array;
   int *list_of_matches;
-  int list_size, total_matches, target;
+  int list_size, total_matches, target, user_choice;
 
-  user_array = collectUserArray(list_size);
-  displayArray(user_array, list_size);
+  user_choice = 1;
 
-  cout << "\nWhat intger would you like to search for?\nEnter Integer: ";
-  cin  >> target;
-  cout << endl;
-  list_of_matches = findMatchingIntegers(user_array, list_size, target
-      ,total_matches);
-  displayArray(list_of_matches, total_matches);
+  while(user_choice == 1) {
+    user_array = collectUserArray(list_size);
+    //displayArray(user_array, list_size);
+
+    while(user_choice == 1) {
+      cout << "\nWhat integer would you like to search for?\nEnter Integer: ";
+      cin  >> target;
+      cout << endl;
+
+
+        list_of_matches = findMatchingIntegers(user_array, list_size, target
+            ,total_matches);
+        displayArray(list_of_matches, total_matches);
+        cout << endl;
+        cout << "Would you like to continue looking for matches?\nEnter 1 for yes"
+             << " enter 0 for no: ";
+        cin  >> user_choice;
+    }
+    cout << endl;
+    cout << "Would you like to do it again for another list?\nEnter 1 for yes"
+         << " and 0 for no: ";
+    cin  >> user_choice;
+    cout << endl;
+  }
+  cout << "\nThat's all folks!\n";
   return 0;
 }
 
@@ -62,7 +80,7 @@ int *collectUserArray(int &array_length) {
 int displayArray(int user_array[], int array_size) {
 
   if(array_size > 0) {
-    cout << "List given: \n[ ";
+    cout << "Matching array: \n[ ";
     for(int i = 0; i < array_size; i++) {
       cout << user_array[i] << " ";
     }
