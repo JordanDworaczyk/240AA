@@ -1,0 +1,17 @@
+; Jordan Dworaczyk
+; CSC240AA - Program #5 (Scheme)
+; Due Wed. Feb. 22nd
+; Writing scheme functions to perform recursive tasks.
+
+; (a) Write a scheme function to compute the nth term of a geometric sequence
+; given the common ratio, r, and the scale factor, a, using a recursive
+; algorithm based on this recursive relation.
+
+(define (sequence common_ratio scale_factor)
+  (if common_ratio >= 0
+    (sequence
+      (- common_ratio - 1) scale_factor
+    )
+    /
+  )
+)
