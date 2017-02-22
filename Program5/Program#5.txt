@@ -14,8 +14,36 @@
   )
 )
 
-(sequence 0 2 2)
-(sequence 1 2 2)
-(sequence 2 2 2)
-(sequence 3 2 2)
-(sequence 4 2 2)
+;(sequence 0 2 2)
+;(sequence 1 2 2)
+;(sequence 2 2 2)
+;(sequence 3 2 2)
+;(sequence 4 2 2)
+
+; (b) Compute the result of the power function ('b' to the 'x' power) given base
+; 'b' and a positive integer exponent 'x', using the given "fast power"
+; algorithm.
+
+(define (fastPower base power)
+  (if (= power 0 )
+    1
+    (if (even? power)
+      (expt (fastPower base (/ power 2) ) 2)
+      (* base (expt (fastPower base (/ (- power 1) 2 )) 2))
+    )
+  )
+)
+
+;(fastPower 2 0)
+;(fastPower 2 1)
+;(fastPower 2 2)
+;(fastPower 2 3)
+;(fastPower 2 4)
+;(fastPower 2 5)
+;(fastPower 2 6)
+;(fastPower 2 7)
+;(fastPower 2 8)
+;(fastPower 2 9)
+;(fastPower 2 10)
+;(fastPower 2 11)
+;(fastPower 2 12)
