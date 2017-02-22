@@ -7,11 +7,15 @@
 ; given the common ratio, r, and the scale factor, a, using a recursive
 ; algorithm based on this recursive relation.
 
-(define (sequence common_ratio scale_factor)
-  (if common_ratio >= 0
-    (sequence
-      (- common_ratio - 1) scale_factor
-    )
-    /
+(define (sequence nth_term common_ratio scale_factor)
+  (if (<= nth_term 1)
+    common_ratio
+    (* common_ratio (sequence (- nth_term 1) common_ratio scale_factor))
   )
 )
+
+(sequence 0 2 2)
+(sequence 1 2 2)
+(sequence 2 2 2)
+(sequence 3 2 2)
+(sequence 4 2 2)
