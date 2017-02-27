@@ -1,0 +1,21 @@
+; Jordan Dworaczyk
+; CSC240AA - Program #6 (Scheme)
+; Due Wed. Feb. 27th
+; Write Scheme expressions to extract each of the items - a,b,c,...,h,i - in
+; the following list:
+;       ( ( a b ) c ( d ( e f ) ) ( ( g ( h ) i ) ) )
+; Use only the "car" and "cdr" functions (and no short-cuts). You may use
+; "define" to assign the list to a variable so that you do not have to re-type
+; it for each expressions.
+
+; For example, if you were given the list "( x y )", and I asked for an
+; expression to extract all the elements, one at a time, then you could use...
+;     ( define List '(a b) )
+;     ( car List )
+;     ( car (cdr List) )
+
+; Do the same for the list given above.
+
+(define List '( ( a b ) c ( d ( e f ) ) ( ( g ( h ) i ) ) ) )
+(car List)
+(car (cdr List))  
