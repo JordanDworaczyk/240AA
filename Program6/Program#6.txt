@@ -17,5 +17,21 @@
 ; Do the same for the list given above.
 
 (define List '( ( a b ) c ( d ( e f ) ) ( ( g ( h ) i ) ) ) )
-(car List)
-(car (cdr List))  
+;a
+(car (car List))
+;b
+(car (cdr (car List)))
+;c
+(car (cdr List))
+;d
+(car (car (cdr (cdr List ))))
+;e
+(car (car (cdr (car (cdr (cdr List ))))))
+;f
+(car (cdr(car(cdr(car(cdr(cdr List)))))))
+;g
+(car(car(car(cdr(cdr(cdr List))))))
+;h
+(car (car(cdr(car(car(cdr(cdr(cdr List))))))))
+;i
+(car(cdr(cdr(car(car(cdr(cdr(cdr List))))))))
