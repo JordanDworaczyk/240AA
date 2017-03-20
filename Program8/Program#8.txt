@@ -82,8 +82,8 @@
       0
       (if (= (- (car LstAA) (car LstBB)) (crawl2 LstAA LstBB (myListLength LstAA)
               (- (car LstAA) (car LstBB))))
-        (- (car LstAA) (car LstBB))
         (largestDiff (cdr LstAA) (cdr LstBB))
+        (myAbsolute (- (car LstAA) (car LstBB)))
       )
     )
   )
@@ -126,6 +126,13 @@
       (car Lst)
       (myGetElement (cdr Lst)(- Pos 1))
     )
+  )
+)
+
+(define (myAbsolute value)
+  (if (< value 0)
+    (* value -1)
+    value
   )
 )
 
