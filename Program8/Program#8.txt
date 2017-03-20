@@ -80,7 +80,7 @@
     0
     (if (null? LstAA)
       0
-      (if (> (- (car LstAA) (car LstBB)) (crawl2 LstAA LstBB (myListLength LstAA)
+      (if (= (- (car LstAA) (car LstBB)) (crawl2 LstAA LstBB (myListLength LstAA)
               (- (car LstAA) (car LstBB))))
         (- (car LstAA) (car LstBB))
         (largestDiff (cdr LstAA) (cdr LstBB))
@@ -88,7 +88,6 @@
     )
   )
 )
-
 
 (define (myCompare given new)
   (if (> given new)
@@ -129,7 +128,6 @@
     )
   )
 )
-
 
 (define LstAA '(2 6 3))
 (define LstBB '(4 6 2))
