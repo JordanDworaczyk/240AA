@@ -74,3 +74,63 @@
 ; (c) Given two lists of numbers (of the same length), return the largest
 ; difference between corresponding pairs of numbers (without creating another
 ; list).
+
+(define (largestDiff LstAA LstBB)
+  (if (null? LstBB)
+    0
+    (if (null? LstAA)
+      0
+      (if (> (- (car LstAA) (car LstBB)) (crawl2 LstAA LstBB (myListLength LstAA)
+              (- (car LstAA) (car LstBB))))
+        (- (car LstAA) (car LstBB))
+        (largestDiff (cdr LstAA) (cdr LstBB))
+      )
+    )
+  )
+)
+
+
+(define (myCompare given new)
+  (if (> given new)
+    #f
+    #t
+  )
+)
+
+(define (crawl2 LstAA LstBB end diff)
+  (if (null? LstBB)
+    0
+    (if (null? LstAA)
+      0
+      (if (= end 1)
+        0
+        (if (<  (- (myGetElement LstAA end) (myGetElement LstAA end)) diff)
+          diff
+          (crawl2 LstAA LstBB (- end 1) diff)
+        )
+      )
+    )
+  )
+)
+
+(define (myListLength Lst)
+  (if (null? Lst)
+    0
+    (+ 1 (myListLength (cdr Lst)))
+  )
+)
+
+(define (myGetElement Lst Pos)
+  (if (null? Lst)
+    0
+    (if (= Pos 1)
+      (car Lst)
+      (myGetElement (cdr Lst)(- Pos 1))
+    )
+  )
+)
+
+
+(define LstAA '(2 6 3))
+(define LstBB '(4 6 2))
+(largestDiff LstAA LstBB)
