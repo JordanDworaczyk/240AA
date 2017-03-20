@@ -1,0 +1,18 @@
+; Jordan Dworaczyk
+; CSSC240AA - Program #8 (Scheme)
+; Due Monday, March 6 (last day to turn in March 20)
+; Define Scheme functions for each of the following. (You may assume that)
+; the inputs are valid lists, and not atoms, and that each element of the list
+; is a number. You must make sure that the functions work for the lists of any
+; size, including the empty list with no elements.)
+
+; (a) Given two lists of numbers (of the same length), return the dot-product.
+
+
+; (b) Given a list of numbers, return whether or not (#t or #f) the list
+; contains any duplicate entries (two or more elements of the same value).
+
+
+; (c) Given two lists of numbers (of the same length), return the largest
+; difference between corresponding pairs of numbers (without creating another
+; list). 
