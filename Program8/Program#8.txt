@@ -26,6 +26,50 @@
 ; (b) Given a list of numbers, return whether or not (#t or #f) the list
 ; contains any duplicate entries (two or more elements of the same value).
 
+(define (duplicates Lst)
+  (if (null? Lst)
+    #f
+    (if (crawl Lst (myListLength Lst) (car Lst))
+      #t
+      (duplicates (cdr Lst))
+    )
+  )
+)
+
+(define (crawl Lst end target)
+  (if (null? Lst)
+    #f
+    (if (= end 1)
+      #f
+      (if (equal? (myGetElement Lst end) target)
+        #t
+        (crawl Lst (- end 1) target)
+      )
+    )
+  )
+)
+
+(define (myListLength Lst)
+  (if (null? Lst)
+    0
+    (+ 1 (myListLength (cdr Lst)))
+  )
+)
+
+(define (myGetElement Lst Pos)
+  (if (null? Lst)
+    0
+    (if (= Pos 1)
+      (car Lst)
+      (myGetElement (cdr Lst)(- Pos 1))
+    )
+  )
+)
+
+(define LstA '(77 22 66 44 55))
+(define LstB '(15 22 11 25 22 14))
+(duplicates LstA)
+(duplicates LstB)
 
 ; (c) Given two lists of numbers (of the same length), return the largest
 ; difference between corresponding pairs of numbers (without creating another
