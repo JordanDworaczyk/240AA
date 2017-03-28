@@ -28,10 +28,10 @@ female( Hedwig_of_Kyburg ).
 
 % lifespan( <person's name>, <birth year>, <death year> ).
 lifespan( Werner_I, 1030, 1096 ).
-lifespan( Otto_II, unkown, 1111 ).
-lifespan( Werner_II, unkown, 1167 ).
-lifespan( Albert_II, unkown, 1199 ).
-lifespan( Rudolph_II, unkown, 1232 ).
+lifespan( Otto_II, unknown, 1111 ).
+lifespan( Werner_II, unknown, 1167 ).
+lifespan( Albert_II, unknown, 1199 ).
+lifespan( Rudolph_II, unknown, 1232 ).
 lifespan( Albert_IV, 1188, 1239 ).
 lifespan( Rudolf_I, 1218, 1291 ).
 
@@ -56,13 +56,13 @@ parentOf( Albert_IV, Rudolf_I).
 parentOf( Hedwig_of_Kyburg, Rudolf_I ).
 
 % rulerOf( <ruler's name>, <country's name>, <year began>, <year ended> ).
-rulerOf( Werner_I, Count_of_Habsburg, , ).
-rulerOf( Otto_II, Count_of_Habsburg, , ).
-rulerOf( Werner_II, Count_of_Habsburg , , ).
-rulerOf( Louis_I, Count_of_Pfirt, , ).
-rulerOf( Albert_III, Count_of_Habsburg, , ).
-rulerOf( Otto_III, Bishop_of_Constance, , ).
-rulerOf( Rudolph_II, Count_of_Habsburg, , ).
-rulerOf( Albert_IV, Count_of_Habsburg, , ).
-rulerOf( Rudolph_III, Count_of_Laufenburg, , ).
-rulerOf( Rudolf_I, King_of_Germany, , ).
+rulerOf( Werner_I, Count_of_Habsburg, 1045 , 1096 ).
+rulerOf( Otto_II, Count_of_Habsburg, 1096, 1111 ).
+rulerOf( Werner_II, Count_of_Habsburg, 1111, 1167 ).
+rulerOf( Louis_I, Count_of_Pfirt, unknown , unknown ).
+rulerOf( Albert_III, Count_of_Habsburg, 1167, 1199 ).
+rulerOf( Otto_III, Bishop_of_Constance, 1166 , 1174 ).
+rulerOf( Rudolph_II, Count_of_Habsburg, 1199, 1232 ).
+rulerOf( Albert_IV, Count_of_Habsburg, 1232, 1239 ).
+rulerOf( Rudolph_III, Count_of_Laufenburg, 1232, 1249).
+rulerOf( Rudolf_I, King_of_Germany, 1273, 1291 ).
