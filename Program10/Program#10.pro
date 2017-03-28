@@ -6,63 +6,63 @@
 
 
 % male( <name> ).
-male( Werner_I ).
-male( Otto_II ).
-male( Werner_II ).
-male( Louis_I ).
-male( Albert_III ).
-male( Otto_III ).
-male( Rudolph_II ).
-male( Albert_IV ).
-male(Rudolph_III ).
-male( Rudolph_I ).
+male( werner_I ).
+male( otto_II ).
+male( werner_II ).
+male( louis_I ).
+male( albert_III ).
+male( otto_III ).
+male( rudolph_II ).
+male( albert_IV ).
+male(ruldolph_III ).
+male( rudolph_I ).
 
 % female( <name> ).
-female( Reginlinde_of_Nellenburg).
-female( Hilla_von_Pfirt ).
-female( Ida_of_Habsburg ).
-female( Richenza ).
-female( Ida_of_Pfullendorf ).
-female( Agnes_of_Staufen ).
-female( Hedwig_of_Kyburg ).
+female( reginlinde_of_Nellenburg).
+female( hilla_von_Pfirt ).
+female( ida_of_Habsburg ).
+female( richenza ).
+female( ida_of_Pfullendorf ).
+female( agnes_of_Staufen ).
+female( hedwig_of_Kyburg ).
 
 % lifespan( <person's name>, <birth year>, <death year> ).
-lifespan( Werner_I, 1030, 1096 ).
-lifespan( Otto_II, unknown, 1111 ).
-lifespan( Werner_II, unknown, 1167 ).
-lifespan( Albert_II, unknown, 1199 ).
-lifespan( Rudolph_II, unknown, 1232 ).
-lifespan( Albert_IV, 1188, 1239 ).
-lifespan( Rudolf_I, 1218, 1291 ).
+lifespan( werner_I, 1030, 1096 ).
+lifespan( otto_II, unknown, 1111 ).
+lifespan( werner_II, unknown, 1167 ).
+lifespan( albert_II, unknown, 1199 ).
+lifespan( rudolph_II, unknown, 1232 ).
+lifespan( albert_IV, 1188, 1239 ).
+lifespan( rudolf_I, 1218, 1291 ).
 
 % parentOf( <parent's name>, <child's name> ).
-parentOf( Werner_I, Otto_II ).
-parentOf( Reginlinde_of_Nellenburg, Otto_II ).
-parentOf( Otto_II , Werner_II  ).
-parentOf( Hilla_von_Pfirt, Werner_II).
-parentOf( Werner_II, Richenza ).
-parentOf( Werner_II, Albert_III ).
-parentOf( Werner_II, Otto_III ).
-parentOf( Ida_of_Habsburg, Richenza ).
-parentOf( Ida_of_Habsburg, Albert_III ).
-parentOf( Ida_of_Habsburg, Otto_III ).
-parentOf( Albert_III, Rudolph_II).
-parentOf( Ida_of_Pfullendorf, Rudolph_II).
-parentOf( Rudolph_II, Albert_IV ).
-parentOf( Rudolph_II, Rudolph_III).
-parentOf( Agnes_of_Staufen, Albert_IV ).
-parentOf( Agnes_of_Staufen, Rudolph_III).
-parentOf( Albert_IV, Rudolf_I).
-parentOf( Hedwig_of_Kyburg, Rudolf_I ).
+parentOf( werner_I, Otto_II ).
+parentOf( reginlinde_of_Nellenburg, Otto_II ).
+parentOf( otto_II , Werner_II  ).
+parentOf( hilla_von_Pfirt, Werner_II).
+parentOf( werner_II, Richenza ).
+parentOf( werner_II, Albert_III ).
+parentOf( werner_II, Otto_III ).
+parentOf( ida_of_Habsburg, Richenza ).
+parentOf( ida_of_Habsburg, Albert_III ).
+parentOf( ida_of_Habsburg, Otto_III ).
+parentOf( albert_III, Rudolph_II).
+parentOf( ida_of_Pfullendorf, Rudolph_II).
+parentOf( rudolph_II, Albert_IV ).
+parentOf( rudolph_II, Rudolph_III).
+parentOf( agnes_of_Staufen, Albert_IV ).
+parentOf( agnes_of_Staufen, Rudolph_III).
+parentOf( albert_IV, Rudolf_I).
+parentOf( hedwig_of_Kyburg, Rudolf_I ).
 
 % rulerOf( <ruler's name>, <country's name>, <year began>, <year ended> ).
-rulerOf( Werner_I, Count_of_Habsburg, 1045 , 1096 ).
-rulerOf( Otto_II, Count_of_Habsburg, 1096, 1111 ).
-rulerOf( Werner_II, Count_of_Habsburg, 1111, 1167 ).
-rulerOf( Louis_I, Count_of_Pfirt, unknown , unknown ).
-rulerOf( Albert_III, Count_of_Habsburg, 1167, 1199 ).
-rulerOf( Otto_III, Bishop_of_Constance, 1166 , 1174 ).
-rulerOf( Rudolph_II, Count_of_Habsburg, 1199, 1232 ).
-rulerOf( Albert_IV, Count_of_Habsburg, 1232, 1239 ).
-rulerOf( Rudolph_III, Count_of_Laufenburg, 1232, 1249).
-rulerOf( Rudolf_I, King_of_Germany, 1273, 1291 ).
+rulerOf( werner_I, Count_of_Habsburg, 1045 , 1096 ).
+rulerOf( otto_II, Count_of_Habsburg, 1096, 1111 ).
+rulerOf( werner_II, Count_of_Habsburg, 1111, 1167 ).
+rulerOf( louis_I, Count_of_Pfirt, unknown , unknown ).
+rulerOf( albert_III, Count_of_Habsburg, 1167, 1199 ).
+rulerOf( otto_III, Bishop_of_Constance, 1166 , 1174 ).
+rulerOf( rudolph_II, Count_of_Habsburg, 1199, 1232 ).
+rulerOf( albert_IV, Count_of_Habsburg, 1232, 1239 ).
+rulerOf( rudolph_III, Count_of_Laufenburg, 1232, 1249).
+rulerOf( rudolf_I, King_of_Germany, 1273, 1291 ).
