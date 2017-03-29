@@ -42,4 +42,4 @@ Use an array, with the indexes of each element corresponding to the integers. (F
 
 	Each time you create an array, you will need to use dynamic allocation. use pointers to represent the arrays, and direct pointer manipulation to access and traverse the arrays (instead of array indexing).
 
-	One suggestion for a way to get started is to make the functions work with array indexing, then replace all array indexes and index incrementing with pointer dereferencing and direct pointer incrementing before you turn it in. (By the way, ``(a + ix)`` is the same as ``a[ix]``, so it is still array indexing). 
+	One suggestion for a way to get started is to make the functions work with array indexing, then replace all array indexes and index incrementing with pointer dereferencing and direct pointer incrementing before you turn it in. (By the way, ``\*(a + ix)`` is the same as ``a[ix]``, so it is still array indexing). 
