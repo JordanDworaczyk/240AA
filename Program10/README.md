@@ -22,7 +22,7 @@
  it by hand on piece of paper, or use a digital format.
 
 ## My Family tree
-This is the family that I chose. 
-![Habsburg Family](240AA\Program10\FamilyTree.png)
+This is the family that I chose.
+![Habsburg Family](\FamilyTree.png)
 
 ##
