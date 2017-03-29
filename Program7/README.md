@@ -13,6 +13,7 @@ After displaying the primes, ask the user if they want to do it again. If they d
 
 ## algorithm:
 Use a variation of what is called the "Sieve of Eratosthenes":
+
 To find the primes up to a given integer N.
 1. List all the intgers from 1 to N, and cross out 1.
 2. Find the first integer that is not circled or crossed out out, and circle it.
@@ -24,12 +25,13 @@ To find the primes up to a given integer N.
 
 ## The implementation:
 Use an array, with the indexes of each element corresponding to the integers. (For simplicity, include the element at index zero also.) In each element of the array, use an integer code to represent the status:
+
 	* -1 means not a prime (crossed out)
 	* +1 means a prime (circled)
 	* 0 means unkown (not yet crossed or circled)
 
 ## Create the following subprograms:
-*
+* 
 	* Given an integer size, return an array of integers of that size, with all elements initialized to zero, except for elements at indexes 0 and 1, that are set to 'NOT PRIME' (-1). (Use the 'return' statement to return the new array.)
 	* Given an array of integers, and the size of that array, return the index of the first element that contains a zero (Use the 'return' statement.)
 	* Given an array of integers, the size of that array, and an integer factor, 'circle' the element at the index equal to the given factor (store +1 there), then scan the rest of the array and 'cross out' (mark with a -1) every other element with an index that is a multiple of the given factor. (Use the factor to 'skip' through the array instead of visiting each element.)
@@ -42,4 +44,4 @@ Use an array, with the indexes of each element corresponding to the integers. (F
 
 	Each time you create an array, you will need to use dynamic allocation. use pointers to represent the arrays, and direct pointer manipulation to access and traverse the arrays (instead of array indexing).
 
-	One suggestion for a way to get started is to make the functions work with array indexing, then replace all array indexes and index incrementing with pointer dereferencing and direct pointer incrementing before you turn it in. (By the way, ``\*(a + ix)`` is the same as ``a[ix]``, so it is still array indexing). 
+	One suggestion for a way to get started is to make the functions work with array indexing, then replace all array indexes and index incrementing with pointer dereferencing and direct pointer incrementing before you turn it in. (By the way, ``\*(a + ix)`` is the same as ``a[ix]``, so it is still array indexing).
