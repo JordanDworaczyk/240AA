@@ -8,10 +8,14 @@
 
 #include <iostream>
 using namespace std;
+#include <math.h>
 
 void displayPrimes(int low_bound, int high_bound);
 int *getList(int size);
 int getFirstZero(int *list, int len);
+void scanList(int *list, int size, int factor);
+void convertZeros(int *list, int size);
+int *getPrimes(int *list, int size, int &len);
 
 int main() {
 	char response;
@@ -51,9 +55,10 @@ int main() {
 }
 
 void displayPrimes(int low_bound, int high_bound) {
-	int size = high_bound - low_bound;
-	int first_zero;
+	int size = (high_bound - low_bound);
+	int first_zero, factor, len;
 	int *list;
+	int *primes;
 
 	if(size == 0) {
 		*list = high_bound;
@@ -61,7 +66,27 @@ void displayPrimes(int low_bound, int high_bound) {
 		list = getList(size);
 	}
 
-	first_zero = getFirstZero(list, size);
+	for(int i = 0; i < size; i++) {
+		first_zero = getFirstZero(list, size);
+
+		factor = first_zero;
+		scanList(list, size, factor);
+	}
+	convertZeros(list, size);
+	primes = getPrimes(list, size, len);
+
+
+	cout << "These are your primes!\n" << endl;
+	for(int ix = 0; ix < len; ix++) {
+		cout << primes[ix] << endl;
+	}
+
+	cout << "This is your list!" << endl;
+	for(int ix = 0; ix < len; ix++) {
+		cout << list[ix] << endl;
+	}
+	delete primes;
+	delete list;
 }
 
 int *getList(int size) {
@@ -70,19 +95,63 @@ int *getList(int size) {
 	list[0] = -1;
 	list[1] = -1;
 
-	for(int i = 2; i < size; i++) {
+	for(int i = 2; i <= size; i++) {
 		list[i] = 0;
 	}
 	return list;
 }
 
 int getFirstZero(int *list, int len) {
-	int element, index;
-	index = 1;
-	do {
-		element = list[1];
-		index++;
-	} while(element != 0);
+	int index;
 
+	for(int ix = 0; ix < len; ix++) {
+
+		if(list[ix] == 0) {
+			index = ix;
+		}
+	}
 	return index;
+}
+
+void scanList(int *list, int size, int factor) {
+
+	int start = getFirstZero(list, size);
+	list[start] = 1;
+
+	for(int index = start + factor; index < size; index = index + factor ) {
+		if(0 == index % factor) {
+			list[index] = -1;
+		}
+	}
+}
+
+void convertZeros(int *list, int size) {
+	for(int ix = 0; ix < size; ix++) {
+		if(list[ix] == 0) {
+			list[ix] = 1;
+		}
+	}
+}
+
+int *getPrimes(int *list, int size, int &len) {
+	int index = 0;
+	int count = 0;
+
+	for(int ix = 0; ix < size; ix++) {
+		if(list[ix] == 1){
+			count++;
+		}
+	}
+
+	len = count;
+	int *primes = new int[len];
+
+	for(int ix = 0; ix < size; ix++ ) {
+		if(list[ix] == 1) {
+			primes[index] = ix;
+			index++;
+		}
+	}
+
+	return primes;
 }
