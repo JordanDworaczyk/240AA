@@ -15,7 +15,7 @@ Implement the Bag as a Scheme list of these pairs (with the `car` holding a
 reference to a pair and the `cdr` holding a reference to the rest of the list).
 
 Therefore, the bag above would be represented as:
-> ``( ( "a" . 3 ) ( "b" . 1 ) ( "c" . 2 ) )`
+ ``( ( "a" . 3 ) ( "b" . 1 ) ( "c" . 2 ) )`
 
 In each of the following descriptions:
 > * 'List' is a list of zero or more ordered pairs.
@@ -42,7 +42,7 @@ sum of the frequencies of each element in the two bags)
 > 10. `(unionBag ListA ListB)` -- return a new bag that represents the result of
 the union of the two given bags (combine the contents of both - take the sum of
 the frequencies of each element in the two bags)
-> 11. `(intersectBag ListA ListB)` -- return a new bag that represents the
+11. `(intersectBag ListA ListB)` -- return a new bag that represents the
 result f the intersection of the two given bags (take the minimum frequency of
 each element in the two bags)
 
