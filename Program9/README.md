@@ -19,30 +19,30 @@ Therefore, the bag above would be represented as:
 
 In each of the following descriptions:
 > * 'List' is a list of zero or more ordered pairs.
-* 'Pair' is an ordered pair as described above (value and frequency).
-* 'Item' is a String (surrounded by double-quotes).
+> * 'Pair' is an ordered pair as described above (value and frequency).
+> * 'Item' is a String (surrounded by double-quotes).
 
 Provide one Scheme functions for each of the following:
 > 1. `(getValue Pair)` -- return the String value of the pair
-2. `(getCount Pair)` -- return the integer frequency of the pair
-3. `(newPair Item)` -- create a new pair representing one of the given items
-4. `(incPair Pair)` -- return a new pair that represents one **more** of the
+> 2. `(getCount Pair)` -- return the integer frequency of the pair
+> 3. `(newPair Item)` -- create a new pair representing one of the given items
+> 4. `(incPair Pair)` -- return a new pair that represents one **more** of the
 items
-5. `(decPair Pair)` -- return a new pair that represents one **less** of the
+> 5. `(decPair Pair)` -- return a new pair that represents one **less** of the
 items
-6. `(insertBag List Item)` -- return a new bag that represents the result of
+> 6. `(insertBag List Item)` -- return a new bag that represents the result of
 inserting the given item in the given list
-7. `(getBagCount List Item)` -- return the number of ties the given item is
+> 7. `(getBagCount List Item)` -- return the number of ties the given item is
 in the given list
-8. `(deleteBag List Item)` -- return a new bag that represents the result of
+> 8. `(deleteBag List Item)` -- return a new bag that represents the result of
 deleting all occurrences of the given item from the given list
-9. `(deleteAllBag List Item)` -- return a new bag that represents the result
+> 9. `(deleteAllBag List Item)` -- return a new bag that represents the result
 of the union of the two given bags (combine the contents of both - take the
 sum of the frequencies of each element in the two bags)
-10. `(unionBag ListA ListB)` -- return a new bag that represents the result of
+> 10. `(unionBag ListA ListB)` -- return a new bag that represents the result of
 the union of the two given bags (combine the contents of both - take the sum of
 the frequencies of each element in the two bags)
-11. `(intersectBag ListA ListB)` -- return a new bag that represents the
+> 11. `(intersectBag ListA ListB)` -- return a new bag that represents the
 result f the intersection of the two given bags (take the minimum frequency of
 each element in the two bags)
 
