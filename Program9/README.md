@@ -15,7 +15,7 @@ Implement the Bag as a Scheme list of these pairs (with the `car` holding a
 reference to a pair and the `cdr` holding a reference to the rest of the list).
 
 Therefore, the bag above would be represented as:
-``( ( "a" . 3 ) ( "b" . 1 ) ( "c" . 2 ) )`
+`'( ( "a" . 3 ) ( "b" . 1 ) ( "c" . 2 ) )`
 
 In each of the following descriptions:
 > * 'List' is a list of zero or more ordered pairs.
