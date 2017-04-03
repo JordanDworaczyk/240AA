@@ -108,11 +108,7 @@
     ()
     (if (null? ListB)
       ()
-      (if (string=?
-            (getValue (car ListA))
-            (getValue (car ListB))
-          )
-        (if (< (getBagCount ListA (getValue (car ListA))) 2)
+        (if (string=? (getValue (car ListA)) (getValue (car ListB)))
           (cons
             (cons
               (getValue (car ListA))
@@ -123,16 +119,30 @@
             )
             (unionBag (cdr ListA) (cdr ListB))
           )
-          (unionBag ListB ListA)
+          (cons
+            (cons
+              (cons
+                (getValue (car ListA))
+                (myListSum ListA (getValue (car ListA)))
+              )
+              (cdr ListB)
+            )
+            (unionBag (cdr ListA) ListB)
+          )
         )
-        (cons
-          (car ListA)
-          (unionBag (ListA) (cdr ListB))
-        )
-      )
     )
   )
 )
 
+(define Bag2 '( ( "a" . 2 ) ( "c" . 1 )  ( "b" . 2 ) ) )
 
-(define Bag2 '( ( "a" . 2 ) ( "b" . 1 )  ( "c" . 2 ) ) )
+; to compute the sum of the elements in a list of numbers
+(define (myListSum lst Item)
+  (if (null? lst)
+    0
+    (if (string=? (getValue (car lst)) Item)
+      (+ (getCount (car lst)) (myListSum (cdr lst) Item))
+      (myListSum (cdr lst) Item)
+    )
+  )
+)
