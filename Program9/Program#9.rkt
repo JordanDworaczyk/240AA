@@ -103,7 +103,36 @@
 ; (10) return a new bag that represents the result of the union of the two given
 ; bags (combine the contents of both - take the sum of the frequencies of each
 ; element in the two bags)
+(define (unionBag ListA ListB)
+  (if (null? ListA)
+    ()
+    (if (null? ListB)
+      ()
+      (if (string=?
+            (getValue (car ListA))
+            (getValue (car ListB))
+          )
+        (if (< (getBagCount ListA (getValue (car ListA))) 2)
+          (cons
+            (cons
+              (getValue (car ListA))
+              (+
+                (getCount (car ListA))
+                (getCount (car ListB))
+              )
+            )
+            (unionBag (cdr ListA) (cdr ListB))
+          )
+          (unionBag ListB ListA)
+        )
+        (cons
+          (car ListA)
+          (unionBag (ListA) (cdr ListB))
+        )
+      )
+    )
+  )
+)
 
 
-
-(define Bag2 '( ( "a" . 2 ) ( "b" . 1 ) ) )
+(define Bag2 '( ( "a" . 2 ) ( "b" . 1 )  ( "c" . 2 ) ) )
