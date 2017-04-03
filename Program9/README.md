@@ -32,13 +32,12 @@ items
 items
 > 6. `(insertBag List Item)` -- return a new bag that represents the result of
 inserting the given item in the given list
-> 7. `(getBagCount List Item)` -- return the number of ties the given item is
+> 7. `(getBagCount List Item)` -- return the number of times the given item is
 in the given list
 > 8. `(deleteBag List Item)` -- return a new bag that represents the result of
-deleting all occurrences of the given item from the given list
+deleteing one ocurrence of the given item from the given list
 > 9. `(deleteAllBag List Item)` -- return a new bag that represents the result
-of the union of the two given bags (combine the contents of both - take the
-sum of the frequencies of each element in the two bags)
+of deleting all occurrences of the given item from the given list
 > 10. `(unionBag ListA ListB)` -- return a new bag that represents the result of
 the union of the two given bags (combine the contents of both - take the sum of
 the frequencies of each element in the two bags)
