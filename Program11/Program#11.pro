@@ -91,5 +91,31 @@ contemporaryOf( PersonA, PersonB ) :-
   compare( < , BornB, DiedA), compare( > , BornB, BornA ),
   compare( > , DiedB, DiedA).
 
-% immediate successor.
-% successorOf( <ruler>, <next ruler> ).
+contemporaryOf( PersonA, PersonB ) :-
+  rulerOf( PersonA, _ , BornA, DiedA ), rulerOf( PersonB, _ , BornB, DiedB ),
+  compare( < , BornA, DiedB), compare( > , BornA, BornB ),
+  compare( < , DiedA, DiedB).
+
+contemporaryOf( PersonA, PersonB ) :-
+  rulerOf( PersonA, _ , BornA, DiedA ), rulerOf( PersonB, _,  BornB, DiedB ),
+  compare( < , BornA, DiedB), compare( > , BornA, BornB ),
+  compare( > , DiedA, DiedB).
+
+contemporaryOf( PersonA, PersonB ) :-
+  rulerOf( PersonA, _ , BornA, DiedA ), rulerOf( PersonB, _ , BornB, DiedB ),
+  compare( < , BornB, DiedA), compare( > , BornB, BornA ),
+  compare( < , DiedB, DiedA).
+
+contemporaryOf( PersonA, PersonB ) :-
+  rulerOf( PersonA, _ , BornA, DiedA ), rulerOf( PersonB, _ , BornB, DiedB ),
+  compare( < , BornB, DiedA), compare( > , BornB, BornA ),
+  compare( > , DiedB, DiedA).
+
+
+%immediate successor.
+%successorOf( <ruler>, <next ruler> ).
+successorOf( Ruler, NextRuler) :-
+  rulerOf( Ruler, Country, _ , EndA ),
+  rulerOf( NextRuler, Country, StartB, _ ),
+  EndA == StartB,
+  \+ Ruler == NextRuler.
