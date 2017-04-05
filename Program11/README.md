@@ -31,3 +31,6 @@ isBoss( A, B )
 Translated to English this means:
 > _If_ person _'A'_ is a manager and _'B'_ is any employee in the same
 _'Company'_ and _'Department'_, then _A_ is the boss of _B_.
+
+Write _rules_ that form relations between the different facts provided in the
+knowledge base that you created. 

@@ -68,3 +68,28 @@ descendentOf( Descendent, Person ) :- parentOf( Person, Descendent ).
 descendentOf( Descendent, Person ) :-
   parentOf( Person, Other ),
   descendentOf( Descendent, Other ).
+
+% alive at the same time.
+% contemporaryOf( <person>, <contemporary> ).
+contemporaryOf( PersonA, PersonB ) :-
+  lifespan( PersonA, BornA, DiedA ), lifespan( PersonB, BornB, DiedB ),
+  compare( < , BornA, DiedB), compare( > , BornA, BornB ),
+  compare( < , DiedA, DiedB).
+
+contemporaryOf( PersonA, PersonB ) :-
+  lifespan( PersonA, BornA, DiedA ), lifespan( PersonB, BornB, DiedB ),
+  compare( < , BornA, DiedB), compare( > , BornA, BornB ),
+  compare( > , DiedA, DiedB).
+
+contemporaryOf( PersonA, PersonB ) :-
+  lifespan( PersonA, BornA, DiedA ), lifespan( PersonB, BornB, DiedB ),
+  compare( < , BornB, DiedA), compare( > , BornB, BornA ),
+  compare( < , DiedB, DiedA).
+
+contemporaryOf( PersonA, PersonB ) :-
+  lifespan( PersonA, BornA, DiedA ), lifespan( PersonB, BornB, DiedB ),
+  compare( < , BornB, DiedA), compare( > , BornB, BornA ),
+  compare( > , DiedB, DiedA).
+
+% immediate successor.
+% successorOf( <ruler>, <next ruler> ).
