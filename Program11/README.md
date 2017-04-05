@@ -33,4 +33,8 @@ Translated to English this means:
 _'Company'_ and _'Department'_, then _A_ is the boss of _B_.
 
 Write _rules_ that form relations between the different facts provided in the
-knowledge base that you created. 
+knowledge base that you created.
+
+## My Family tree
+This is the family that I chose.
+![Habsburg Family](FamilyTree.png)

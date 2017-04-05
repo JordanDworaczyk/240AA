@@ -24,5 +24,3 @@
 ## My Family tree
 This is the family that I chose.
 ![Habsburg Family](FamilyTree.png)
-
-##
