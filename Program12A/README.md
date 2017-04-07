@@ -18,13 +18,12 @@ This is a matrix of 3 rows (horizontal) by 4 columns (vertical), or 3x4 matrix.
 A matrix can be represented in Lisp as a list of lists, with each list
 representing one row.  
 
-###### For example:
-`'( ( 2 4 6 8 ) ( 1 3 5 7 ) ( 2 9 0 1 ) )`  
-
-
 For convenience with a later assignment, we will number the rows from bottom to
 top, and the columns from left to right. For instance, the number _8_ is at row
 1 and column 4, and the item at row 3 column 2 is _9_.
+
+###### For example:
+`'( ( 2 4 6 8 ) ( 1 3 5 7 ) ( 2 9 0 1 ) )`  
 
 ![Data Structure for Matrix](dataStructure.png)
 
