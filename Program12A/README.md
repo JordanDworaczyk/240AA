@@ -9,7 +9,6 @@ Develop some functions to manipulate matrices.
 
  A _"matrix"_ is a two-dimensional grid.  
 
-###### For example:  
 ```
 2 9 0 1  
 1 3 5 7  
@@ -20,21 +19,26 @@ A matrix can be represented in Lisp as a list of lists, with each list
 representing one row.  
 
 ###### For example:
-`'( ( 2 4 6 8 ) ( 1 3 5 7 ) ( 2 9 0 1 ) )`
+`'( ( 2 4 6 8 ) ( 1 3 5 7 ) ( 2 9 0 1 ) )`  
+
 
 For convenience with a later assignment, we will number the rows from bottom to
 top, and the columns from left to right. For instance, the number _8_ is at row
 1 and column 4, and the item at row 3 column 2 is _9_.
+
+![Data Structure for Matrix](dataStructure.png)
+
+---
 
 ###### Terms
 
 In each of the following descriptions,  
 *  _'Item'_ is an arbritary item (numbers or symbols).
 *  _'Matrix'_ is a list of one or more lists of items (described above).
-*  _'Column'_ is a column number in the matrix, from one to the number of columns.
+*  _'Column'_ is a column number in the matrix, from one to the number of
+columns.
 *  _'Row'_ is a row number in the matrix, from one to the number of rows.
 
----
 
 ### Requirements
 Provide one Lisp function for each of the following:  
