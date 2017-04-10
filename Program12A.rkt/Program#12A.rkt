@@ -109,9 +109,9 @@
   (getColumn (getRow Matrix Row) Column)
 )
 
-(define (firstPart lst Row Column)
-  (deleteEndXTimes (getRow lst Row) (- (myListLength
-    (getRow lst Row)) (- Column 1)) 0)
+(define (firstPart lst Column)
+  (deleteEndXTimes lst (- (myListLength
+    lst ) (- Column 1)) 0)
 )
 
 (getCell (Matrix) 1 1)
@@ -141,7 +141,22 @@
       )
       (+ 1 Column)
     )
-    (firstPart Lst Row Column)
+    (firstPart (getRow Lst Row) Column)
+    1
+  )
+)
+
+(define (middleMatrix Lst Row Item)
+  (myInsertAtPos
+    (myFindElement
+      (myInsertAtPos
+        Lst
+        Item
+        (+ Row 1)
+      )
+      (+ 1 Row)
+    )
+    (firstPart Lst Row)
     1
   )
 )
@@ -177,7 +192,7 @@
           )
         )
         (combine
-          (firstPart Matrix Row Column)
+          (firstPart (getRow Matrix Row) Column)
           (cdr (middle Matrix Row Column Item))
         )
       )
@@ -187,23 +202,23 @@
 )
 
 (define (setCell Matrix Row Column Item )
-  (if (= 1 Column)
+  (if (= 1 Row)
     (myInsertAtPos
       (cdr Matrix)
       (insertLittle Matrix Row Column Item)
       Row
     )
-    (if (= Column (myListLength Matrix))
+    (if (= Row (myListLength Matrix))
       (myDeleteEnd
         (myInsertAtPos
-          (getRow Matrix Row)
+          Matrix
           (insertLittle Matrix Row Column Item)
-          Column
+          Row
         )
       )
       (combine
-        (firstPart Matrix Row Column)
-        (cdr (middle Matrix Row Column (insertLittle Matrix Row Column Item)))
+        (firstPart Matrix Row)
+        (cdr (middleMatrix Matrix Row (insertLittle Matrix Row Column Item)))
       )
     )
   )
