@@ -1,5 +1,5 @@
 % expert system for deciding college pathway - main control
-rooby_roo :-
+start :-
   intro,
   write( 'Answer all questions y for yes or n for no.'), nl,
   clear_stored_answers,
@@ -61,53 +61,154 @@ intro :-
 
 % possiblities
 
-may_be( scooby_doo ) :-
-  user_says(dog,yes).
+may_be( this_does_not_apply ) :-
+  user_says(q1,no).
 
-may_be( shaggy ) :-
-  user_says(dog, no),
-  user_says(male, yes),
-  user_says(neckware, no).
+may_be( sign_up_for_ASU ) :-
+  user_says(q1, yes),
+  user_says(q2, yes),
+  user_says(q3, yes).
 
-may_be( freddie ) :-
-  user_says(dog, no),
-  user_says(male, yes),
-  user_says(neckware, yes).
 
-may_be( daphne ):-
-  user_says(dog, no),
-  user_says(male, no),
-  user_says(neckware, yes).
+may_be( sign_up_for_community ) :-
+  user_says(q1, yes),
+  user_says(q2, yes),
+  user_says(q3, no),
+  user_says(q4, yes).
 
-may_be( velma ) :-
-  user_says(dog, no),
-  user_says(male, no),
-  user_says(neckware, no).
+may_be( take_the_accuplacer ):-
+  user_says(q1, yes),
+  user_says(q2, yes),
+  user_says(q3, no),
+  user_says(q4, no).
+
+may_be( sign_up_for_classes ) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, yes),
+  user_says(q6, yes),
+  user_says(q7, yes),
+  user_says(q8, yes).
+
+may_be( take_the_accuplacer_at_Community_College ) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, yes),
+  user_says(q6, yes),
+  user_says(q7, yes),
+  user_says(q8, no).
+
+may_be( apply_to_ASU) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, yes),
+  user_says(q6, yes),
+  user_says(q7, no).
+
+may_be( enter_into_community_college) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, yes),
+  user_says(q6, no).
+
+may_be(transfer_to_ASU) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, no),
+  user_says(q9, yes),
+  user_says(q10, yes),
+  user_says(q11, yes).
+
+
+may_be(complete_60_credits) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, no),
+  user_says(q9, yes),
+  user_says(q10, yes),
+  user_says(q11, no).
+
+may_be(sign_up_at_MCC) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, no),
+  user_says(q9, yes),
+  user_says(q10, no).
+
+may_be(take_the_ac) :-
+  user_says(q1, yes),
+  user_says(q2, no),
+  user_says(q5, no),
+  user_says(q9, no).
 
 % Text for the questions
 
-ask_question(dog) :- write('Is it a dog? (Ris it a dog?) '),nl.
+ask_question(q1) :- write('Do you want to graduate fro ASU with '),nl,
+  write('a bachelors degree?'),nl.
 
-ask_question(male) :- write('Is the character a male? '),nl.
+ask_question(q2) :- write('Are you in high school? '),nl.
 
-ask_question(neckware) :-
-  write('Is the character wearing a scarf '),nl,
-  write('or some kind of neckware '),nl,
-  write('(a turtleneck sweater does not count)? '),nl.
+ask_question(q3) :-
+  write('Have you been accepted to ASU? '),nl.
+
+ask_question(q4) :-
+  write('Have you taken the accuplacer at Community College? '),nl.
+
+ask_question(q5) :-
+  write('Do you have a high school diploma? '),nl.
+
+ask_question(q6) :-
+  write('Do you have any college credits? '),nl.
+
+ask_question(q7) :-
+  write('Have you applied to ASU? '),nl.
+
+ask_question(q8) :-
+  write('Were you accepted? '),nl.
+
+ask_question(q9) :-
+  write('Have you taken the accuplacer? '),nl.
+
+ask_question(q10) :-
+  write('Have you signed up for classes? '),nl.
+
+ask_question(q11) :-
+  write('Have you completed 60 credit hours at community college? '),nl.
 
 % Explanations for the various diagnoses
 
-explain(scooby_doo) :- nl,
-  write('That is Scooby-Doo, silly.'), nl.
+explain(this_does_not_apply) :- nl,
+  write('This does not apply to you.'), nl.
 
-explain(shaggy) :- nl,
-  write('He is named Norville "Shaggy" Rogers.'), nl.
+explain(sign_up_for_ASU) :- nl,
+  write('Sign up for classes at ASU!'), nl.
 
-explain(freddie) :- nl,
-  write('He is named Fred "Freddie" Jones.'), nl.
+explain(sign_up_for_community) :- nl,
+  write('Sign up for Community College!'), nl.
 
-explain(daphne) :- nl,
-  write('She is named Daphne Blake.'), nl.
+explain(take_the_accuplacer) :- nl,
+  write('Take the accuplacer at Community College.'), nl.
 
-explain(velma) :- nl,
-  write('She is named Velma Dinkley.'), nl.
+explain(sign_up_for_classes) :- nl,
+  write('Well sign up for some classes then!'), nl.
+
+explain(take_the_accuplacer_at_Community_College) :- nl,
+  write('Take the accuplacer test at a community college!'), nl.
+
+explain(apply_to_ASU) :- nl,
+  write('Apply to ASU!'), nl.
+
+explain(enter_into_community_college) :- nl,
+  write('Find a community college!'), nl.
+
+explain(transfer_to_ASU) :- nl,
+  write('Transfer to ASU!'), nl.
+
+explain(complete_60_credits) :- nl,
+  write('Complete 60 credit hours at community college!'), nl.
+
+explain(sign_up_at_MCC) :- nl,
+  write('Sign up at MCC!'), nl.
+
+explain(take_the_ac) :- nl,
+  write('Take the accuplacer at MCC!'), nl.
