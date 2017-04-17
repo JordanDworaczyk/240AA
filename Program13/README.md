@@ -18,3 +18,6 @@ Use the following specifications as a guideline:
 nodes (questions).
 * I will be flexible with these requirements as long as your
 plan is reasonable.
+
+### Decision Tree
+![Decision Tree](ExpertSystem.png)
