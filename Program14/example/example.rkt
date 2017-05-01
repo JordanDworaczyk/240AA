@@ -60,7 +60,7 @@ show_state(front_door) :-
 show_state(doormat) :-
   stored_answer(key_under_doormat, yes),
   write( 'You see a key here'), nl,
-  wriite('Do you want to...'), nl,
+  write('Do you want to...'), nl,
   write('(a) Whistle some more'), nl,
   write('(b) Put down the doormat'), nl,
   write('(q) Quit the program'), nl.
