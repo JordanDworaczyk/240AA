@@ -63,7 +63,7 @@ show_state(doormat) :-
   write('Do you want to...'), nl,
   write('(a) Whistle some more'), nl,
   write('(b) Put down the doormat'), nl,
-  write('(c) Pick the key up')
+  write('(c) Pick the key up'), nl,
   write('(q) Quit the program'), nl.
 
 show_state(doormat) :-
