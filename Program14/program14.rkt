@@ -33,8 +33,8 @@ display_intro :-
 initialize :-
   asserta(stored_answer(moves,0)),
   asserta(stored_answer(treasure, 0)),
-  asserta(stored_answer(have_key,no)),
-  asserta(stored_answer(key_under_doormat, yes)).
+  asserta(stored_answer(have_money,no)), % was have_key
+  asserta(stored_answer(given_money, yes)). % was key_under_doormat
 
 % code to be executed at the end...
 
@@ -43,7 +43,7 @@ goodbye :-
   write( 'You made this many moves...' ),
   write( Count ), nl,
   stored_answer(treasure, Amount),
-  write( 'You have this much money...$'),
+  write( 'You have this many kids toys...$'),
   write( Amount ), nl,
   write( 'Have a nice day'), nl.
 
@@ -54,71 +54,69 @@ show_state(front_line) :-
   write( 'Do you want to...'), nl,
   write('(a) Order Number One'), nl,
   write('(b) Order Number Two'), nl,
-  write('(c) Order number 3'), nl,
-  write('(d) Probably won't need this'), nl,
+  write('(c) Order number Three'), nl,
+  write('(d) Probably won't need this'), nl, % proably won't need this
   write('(q) Quit the program'), nl.
 
-show_state(doormat) :-
-  stored_answer(key_under_doormat, yes),
-  write( 'You see a key here'), nl,
+show_state(no_money) :-
+  stored_answer(given_money, yes),
+  write( 'The fella behind you offers you some spare change.'), nl,
   write('Do you want to...'), nl,
-  write('(a) Whistle some more'), nl,
-  write('(b) Put down the doormat'), nl,
-  write('(c) Pick the key up'), nl,
+  write('(a) Accept the money'), nl,
+  write('(b) Go to the back of the line'), nl,
+  write('(c) Look up'), nl,
   write('(q) Quit the program'), nl.
 
-show_state(doormat) :-
-  stored_answer(key_under_doormat, no),
-  write( 'Nothing under here'), nl,
+show_state(no_money) :-
+  stored_answer(given_money, no),
+  write( 'You're out of luck!'), nl,
   wriite('Do you want to...'), nl,
-  write('(a) Whistle some more'), nl,
-  write('(b) Put down the doormat'), nl,
+  write('(b) Go to the back of the line'), nl,
+  write('(c) Look up'), nl,
   write('(q) Quit the program'), nl.
 
-show_state(window) :-
-  write( 'You are in front of the window' ), nl,
-  write( 'with a nice flower box'), nl,
+show_state(no_number_1) :-
+  write( 'Sorry, they are fresh out of number 1's' ), nl,
   write( 'Do you want to...'), nl,
-  write('(a) Try to open the window'), nl,
-  write('(b) Dig through the flower box'), nl,
-  write('(c) Go back to the front door '), nl,
+  write('(a) Argue with the King of Burgers'), nl,
+  write('(b) Order Number 2'), nl,
+  write('(c) Order Number 3 '), nl,
   write('(q) Quit the program'), nl.
 
 % final states do not display a menu - they automatically quit ('q')
 
-show_state(living_room) :-
-  write( 'In the living room.'), nl,
-  write( 'Welcome home.' ), nl.
+show_state(get_food) :-
+  write( 'You have your food.'), nl,
+  write( 'You may eat.' ), nl.
 
-show_state(jail) :-
+show_state(no_food) :-
   write( 'The police will be on their way soon'), nl,
-  write( 'Maybe you will be able to get some sleep in the holding cell'),nl,
-  write( '... depending on who you get for neighbors'), nl.
+  write( 'Maybe you will get food in the holding cell.'),nl,
 
-get_choice(living_room,q).
-get_choice(jail,q).
+get_choice(get_food,q).
+get_choice(no_food,q).
 
 % code to be executed for each choice of action from each state...
 
-show_transition(front_door, a) :-
-  write( 'Nice tune, but you are not getting anywehre...'), nl.
-show_transition(front_door, b) :-
-  stored_answer(have_key, yes),
-  write('The door opens and you step inside.'), nl.
-show_transition(front_door, b) :-
-  stored_answer(have_key, no),
-  write('The door is locked, and you have no key.'), nl.
-show_transition(front_door, c) :-
-  write('You lift up the doormat and take a peek...'), nl.
-show_transition(front_door, d) :-
-  write('You stumble off to your left in the dark...'), nl.
+show_transition(front_line, a) :-
+  write( 'Excellent choice! You order the number one but...'), nl.
+show_transition(front_line, b) :-
+  % stored_answer(have_key, yes),
+  write('Excellent choice! You order the number two but...'), nl.
+% show_transition(front_line, b) :-
+  % stored_answer(have_key, no),
+ % write('The door is locked, and you have no key.'), nl.
+show_transition(front_line, c) :-
+  write('Excellent choice! You order the number three but...'), nl.
+% show_transition(front_door, d) :-
+ % write('You stumble off to your left in the dark...'), nl.
 
-show_transition(doormat, a) :-
-  write( 'You feel a little better, but you are still outside.'), nl.
-show_transition(doormat, b) :-
-  write('The doormat is down.'), nl.
+show_transition(no_money, a) :-
+  write( 'You switch places with the man in the back of the line for spare change.'), nl.
+show_transition(no_money, b) :-
+  write('You walk all the way back to the end of the line and begin waiting once again.'), nl.
 show_transition(doormat, c) :-
-  write( 'You pick up the key' ), nl,
+  write( 'You switch places with the man in the back of the line for spare change.' ), nl,
   retract(stored_answer(key_under_doormat, yes)),
   asserta(stored_answer(key_under_doormat, no)),
   retract(stored_answer(have_key,no)),
