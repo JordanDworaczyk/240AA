@@ -16,5 +16,8 @@ what the user's task will be. Also, turn in graph describing the
 DFA (or FSM) that you used for your program. You can turn in this
 description when you turn in your program.  
 
-### Example of Graph
+### Example of Graph Given
 ![graph](example\graph.png)
+
+### Graph of my Story/quest
+![graph](graph.png)
