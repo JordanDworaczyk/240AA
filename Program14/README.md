@@ -20,4 +20,4 @@ description when you turn in your program.
 ![graph](example\graph.png)
 
 ### Graph of my Story/quest
-![graph1](graph.png)
+![graph1](graph.PNG)
