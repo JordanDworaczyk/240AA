@@ -65,6 +65,14 @@ show_state(doormat) :-
   write('(b) Put down the doormat'), nl,
   write('(q) Quit the program'), nl.
 
+show_state(doormat) :-
+  stored_answer(key_under_doormat, no),
+  write( 'Nothing under here'), nl,
+  wriite('Do you want to...'), nl,
+  write('(a) Whistle some more'), nl,
+  write('(b) Put down the doormat'), nl,
+  write('(q) Quit the program'), nl.
+
 show_state(window) :-
   write( 'You are in front of the window' ), nl,
   write( 'with a nice flower box'), nl,
@@ -172,7 +180,7 @@ go_to_next_state(S1, Cin) :-
   get_choice(S1, Cnew),
   go_to_next_state(S1, Cnew).
 
-get_choice(_,C) :-
+get_choice(_ ,C) :-
   write('Next entry (letter followed by a period)?'),
   read(C).
 
