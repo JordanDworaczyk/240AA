@@ -1,0 +1,10 @@
+Jordan Dworaczyk
+Brief description of Quest
+
+  The quest takes place in a Burger King. The user begins in the front of the
+line and is supposed to order what they want off of the menu. If they order
+wrong then they may not get any food, however, if they order correctly and
+make the right moves then they will have food. The player may end up having to
+wait through the line again, or they may end up kicked out of the
+establishment. If they get kicked out then they loose. Going back to the line
+does not signal an end to the quest.
