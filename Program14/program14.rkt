@@ -11,8 +11,8 @@ start_state(front_line).
 next_state(front_line, a, no_number_1).
 next_state(front_line, b, get_food) :- stored_answer(have_money, yes).
 next_state(front_line, b, no_money) :- stored_answer(have_money, no).
-next_state(front_line, c, get_food). :- stored_answer(have_money, yes).
-next_state(front_line, c, no_money). :- stored_answer(have_money, no).
+next_state(front_line, c, get_food) :- stored_answer(have_money, yes).
+next_state(front_line, c, no_money) :- stored_answer(have_money, no).
 %next_state(front_line, d, window).
 
 next_state(no_money, a, no_money).
@@ -20,10 +20,10 @@ next_state(no_money, b, front_line).
 next_state(no_money, c, front_line).
 
 next_state(no_number_1, a, no_food).
-next_state(no_number_1, b, get_food). :- stored_answer(have_money, yes).
-next_state(no_number_1, b, no_money). :- stored_answer(have_money, no).
-next_state(no_number_1, c, get_food). :- stored_answer(have_money, yes).
-next_state(no_number_1, c, no_money). :- stored_answer(have_money, no).
+next_state(no_number_1, b, get_food) :- stored_answer(have_money, yes).
+next_state(no_number_1, b, no_money) :- stored_answer(have_money, no).
+next_state(no_number_1, c, get_food) :- stored_answer(have_money, yes).
+next_state(no_number_1, c, no_money) :- stored_answer(have_money, no).
 
 
 % code to be executed at the beginning...
