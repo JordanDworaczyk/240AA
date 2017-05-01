@@ -172,7 +172,7 @@ go_to_next_state(S1, Cin) :-
   retract(stored_answer(moves,_)),
   asserta(stored_answer(moves,OneMoreMove)),
   get_choice(S2, Cnew),
-  go_to_next_state(S1, Cnew).
+  go_to_next_state(S2, Cnew).
 
 go_to_next_state(S1, Cin) :-
   \+ next_state(S1, Cin, _),
