@@ -137,7 +137,7 @@ show_transition(window, c) :-
 
 show_transition(front_door, fail) :-
   write('a,b,c,d, or q'), nl.
-show_transition(front_door, fail) :-
+show_transition(doormat, fail) :-
   stored_answer(key_under_doormat, yes),
   write('a,b,c,d, or q'), nl.
 show_transition(doormat, fail) :-
