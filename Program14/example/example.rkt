@@ -22,7 +22,7 @@ next_state(window, c, front_door).
 % code to be executed at the beginning...
 
 display_intro :-
-  write('The journey home...'), nl, nl
+  write('The journey home...'), nl, nl,
   write('It is two in the morning...'), nl,
   write('You have been having a good time,'), nl,
   write('but now you are tired and want to go to bed.'), nl,
