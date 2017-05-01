@@ -17,7 +17,7 @@ DFA (or FSM) that you used for your program. You can turn in this
 description when you turn in your program.  
 
 ### Example of Graph Given
-![graph](example\graph.png)
+![graph](example/graph.png)
 
 ### Graph of my Story/quest
 ![graph1](graph.PNG)
