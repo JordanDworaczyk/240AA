@@ -4,33 +4,31 @@
 
 % assign the state that will start the program
 
-start_state(front_door).
+start_state(front_line).
 
 % define the edges of the finite state diagram
 
-next_state(front_door, a, front_door).
-next_state(front_door, b, living_room) :- stored_answer(have_key, yes).
-next_state(front_door, b, front_door) :- stored_answer(have_key, no).
-next_state(front_door, c, doormat).
-next_state(front_door, d, window).
+next_state(front_line, a, front_line).
+next_state(front_line, b, living_room) :- stored_answer(have_key, yes).
+next_state(front_line, b, front_line) :- stored_answer(have_key, no).
+next_state(front_line, c, doormat).
+next_state(front_line, d, window).
 
 next_state(doormat, a, doormat).
-next_state(doormat, b, front_door).
-next_state(doormat, c, front_door).
+next_state(doormat, b, front_line).
+next_state(doormat, c, front_line).
 
 next_state(window, a, jail).
 next_state(window, b, window).
-next_state(window, c, front_door).
+next_state(window, c, front_line).
 
 % code to be executed at the beginning...
 
 display_intro :-
-  write('The journey home...'), nl, nl,
-  write('It is two in the morning...'), nl,
-  write('You have been having a good time,'), nl,
-  write('but now you are tired and want to go to bed.'), nl,
-  write('You are home now,'), nl,
-  write(' but you realize that your pockets are empty.'), nl.
+  write('The journey to Burder King...'), nl, nl,
+  write('Alas you have arrived at Burger King...'), nl,
+  write('You are hungry and disoriented from the long journey,'), nl,
+  write('but now you have reached the position in the line to finally order.'), nl,
 
 initialize :-
   asserta(stored_answer(moves,0)),
@@ -51,13 +49,13 @@ goodbye :-
 
 % code to be executed upon reaching each state
 
-show_state(front_door) :-
-  write( 'At the front door'), nl,
+show_state(front_line) :-
+  write( 'You've been waiting for what seems like hours...'), nl,
   write( 'Do you want to...'), nl,
-  write('(a) Whistle awhile'), nl,
-  write('(b) Open the door and go inside'), nl,
-  write('(c) Look under the doormat'), nl,
-  write('(d) Go to the left'), nl,
+  write('(a) Order Number One'), nl,
+  write('(b) Order Number Two'), nl,
+  write('(c) Order number 3'), nl,
+  write('(d) Probably won't need this'), nl,
   write('(q) Quit the program'), nl.
 
 show_state(doormat) :-
